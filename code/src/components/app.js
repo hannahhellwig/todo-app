@@ -5,36 +5,46 @@ class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { items: [{ text: "Clean", done: false }], text: "" }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = { toDoItems: [{ text: "Clean", done: false }, { text: "Work Out", done: false }], text: "" }
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ text: event.target.value })
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault()
     if (!this.state.text.length) {
       return
     }
     const newItem = {
       text: this.state.text,
-      id: Date.now()
+      done: false
     }
     this.setState(state => ({
-      items: state.items.concat(newItem),
+      toDoItems: state.toDoItems.concat(newItem),
       text: ""
     }))
+  }
+
+  handleBoxCheck = (checked, id) => {
+    const listUpdate = this.state.toDoItems
+    listUpdate[id].done = !listUpdate[id].done
+    this.setState({
+      toDoItems: listUpdate
+    })
   }
 
   render() {
     return (
       <div>
-        <h1>Todo List</h1>
-        <TodoList
-          items={this.state.items} />
+        <h3>Todo List</h3>
+        {this.state.toDoItems.map((item, index) =>
+          <TodoList
+            id={index}
+            name={item.text}
+            status={item.done}
+            handleBoxCheck={() => this.handleBoxCheck(item.done, index)} />)}
         <form onSubmit={this.handleSubmit}>
           <input
             id="newTodo"

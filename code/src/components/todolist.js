@@ -5,21 +5,17 @@ class TodoList extends React.Component {
   render() {
     return (
       <ul>
-        {this.props.items.map(item => (
-          <li>
-            <label>
-              <input
-                type="checkbox"
-                key={item.id}
-                checked={this.props.done} />
-              {item.text}
-            </label>
-          </li>
-        ))}
+        <li>
+          <input
+            type="checkbox"
+            key={this.props.id}
+            checked={this.props.status}
+            onChange={this.props.handleBoxCheck} />
+          {this.props.name}
+        </li>
       </ul>
     )
   }
 }
 
-// onChange={this.props.handleBoxCheck()}
 export default TodoList
