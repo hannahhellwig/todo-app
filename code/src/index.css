@@ -72,3 +72,9 @@ input {
     background-image: url(/images/image6.jpg);
   }
 }
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  body {
+    background-image: url(/images/image2.jpg);
+  }
+}
