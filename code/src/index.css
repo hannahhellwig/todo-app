@@ -2,8 +2,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
 }
 ul {
   padding: 0;
+  list-style: none;
 }
-/* color: #E399B0 */
+
+
+.container {
+  /* background-color: #E399B0; */
+  padding: 30px;
+  margin-top: 150px;
+  max-width: 350px;
+  border: 1px solid #E399B0;
+  border-radius: 12px;
+}
