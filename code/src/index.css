@@ -4,18 +4,71 @@ body {
   font-family: sans-serif;
   display: flex;
   justify-content: center;
+  background-image: url(/images/image5.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 ul {
   padding: 0;
   list-style: none;
 }
 
+p {
+  padding: 0 10px;
+  max-width: 200px;
+  overflow: scroll;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  box-sizing: border-box;
+  margin: 20px 0;
+  height: 30px;
+  padding-left: 5px;
+  border: 1px solid #2A4E3A;
+}
+
+.addButton {
+  box-sizing: border-box;
+  height: 30px;
+  border: none;
+  background-color: #2A4E3A;
+  color: #fff;
+}
 
 .container {
-  /* background-color: #E399B0; */
   padding: 30px;
-  margin-top: 150px;
-  max-width: 350px;
-  border: 1px solid #E399B0;
+  margin-top: 80px;
+  width: 250px;
   border-radius: 12px;
+  background-color: #fff;
+  opacity: 0.8;
+}
+.todoItem {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+}
+.doneButton {
+  width: 50px;
+  height: 30px;
+  border: none;
+  background-color: #2A4E3A;
+  color: #fff;
+}
+.deleteButton {
+  margin-left: 20px;
+}
+@media screen and (max-width: 600px) {
+  body {
+    background-image: url(/images/image6.jpg);
+  }
 }
